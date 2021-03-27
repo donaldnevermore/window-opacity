@@ -17,6 +17,9 @@ if (config.ProcessNames is not null) {
     SetWindowsOpacity(hwndList, config.Opacity);
 }
 
+Console.WriteLine("Press any key to exit...");
+Console.ReadKey();
+
 #endregion
 
 const int GwlExstyle = -20;
@@ -28,7 +31,7 @@ static void DisplayProcesses() {
     Console.WriteLine("===Process names begin===");
     foreach (var p in Process.GetProcesses()) {
         if (p.MainWindowHandle != IntPtr.Zero) {
-            Console.WriteLine(p.ProcessName);
+            Console.WriteLine($"  {p.ProcessName}");
         }
     }
 
@@ -57,12 +60,12 @@ static Process[] FindProcesses(string[] processNames) {
 /// hwnd is window handle
 void SetWindowsOpacity(Process[] windowHandleList, byte opacity) {
     if (windowHandleList.Length == 0) {
-        Console.WriteLine("No processes found.");
+        Console.WriteLine("No processes were found.");
         return;
     }
 
     if (opacity < 40 || opacity > 255) {
-        Console.WriteLine("Opacity should be from 40 to 255");
+        Console.WriteLine("Opacity should be 40 through 255");
         return;
     }
 
