@@ -14,8 +14,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Content Update="config.json">
-            <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        <Content Include="config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
             <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
         </Content>
     </ItemGroup>
