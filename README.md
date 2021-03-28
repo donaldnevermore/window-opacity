@@ -5,7 +5,7 @@ MacOS/Linux. If you know how to make it work on other platforms, feel welcome to
 
 ## Getting started
 
-i:1. run `WindowOpacity.exe`.
+1. run `WindowOpacity.exe`.
 2. find the process name whose opacity you want to change.
 3. use that name in `config.json`.
 4. run `WindowOpacity.exe` again.
