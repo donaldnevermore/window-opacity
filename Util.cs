@@ -6,28 +6,34 @@ using System.Text.Json;
 namespace WindowOpacity {
     public static class Util {
         public static Config GetConfig() {
-            var path = AppContext.BaseDirectory + "config.json";
-            var json = File.ReadAllText(path);
-            var config = JsonSerializer.Deserialize<Config>(json);
-            if (config is null) {
-                throw new Exception("Config cannot be null. Please check config.json file.");
+            Console.WriteLine("Please enter process names, separated by commas.");
+            var processesText = Console.ReadLine();
+            while (string.IsNullOrEmpty(processesText)) {
+                Console.WriteLine("Process names cannot be null. Try again.");
+                processesText = Console.ReadLine();
             }
 
-            return config;
+            Console.WriteLine("Please enter an opacity number.");
+            var opacityText = Console.ReadLine();
+            byte opacity;
+            while (!byte.TryParse(opacityText, out opacity)) {
+                Console.WriteLine("Opacity must be a number. Try again.");
+                opacityText = Console.ReadLine();
+            }
+
+            return new Config { ProcessNames = processesText.Split(','), Opacity = opacity };
         }
 
         /// <summary>
-        ///     Display running processes
+        ///     Display current processes.
         /// </summary>
         public static void DisplayProcesses() {
-            Console.WriteLine("===Process names begin===");
+            Console.WriteLine("===Process list===");
             foreach (var p in Process.GetProcesses()) {
                 if (p.MainWindowHandle != IntPtr.Zero) {
-                    Console.WriteLine($"  {p.ProcessName}");
+                    Console.WriteLine($"    {p.ProcessName}");
                 }
             }
-
-            Console.WriteLine("===Process names end===");
         }
     }
 }

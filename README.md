@@ -1,27 +1,24 @@
-﻿# Window Opacity
+﻿# Window Opacity v0.2
 
-Change your window's opacity, make it transparent on Windows. Tested on Windows, but I don't know if it works on
-MacOS/Linux. If you know how to make it work on other platforms, feel welcome to open an issue/PR.
+Change your window's opacity and make it transparent. Tested on Windows, but I don't know if it works on MacOS/Linux. If
+you know how to make it work on other platforms, feel welcome to open an issue/PR.
 
-## Getting started
+## Getting Started
 
 1. run `WindowOpacity.exe`.
 2. find the process name whose opacity you want to change.
-3. use that name in `config.json`.
-4. run `WindowOpacity.exe` again.
+3. type those names in the terminal.
 
 ## Config
 
 See `config.json` and `Config.cs`.
 
-## Running from source
+## Running from Source
 
-1. make sure you have .NET 6.0 or above installed.
+1. make sure you have .NET 5.0 or above installed.
 2. run `dotnet run`.
 
-## Thanks to
+## Special Thanks
 
 - [Console-SetWindowAlpha](https://github.com/OneForCheng/Console-SetWindowAlpha)
 - [vscode-win-opacity](https://github.com/SkaceKamen/vscode-win-opacity)
-
-These projects are of great help.

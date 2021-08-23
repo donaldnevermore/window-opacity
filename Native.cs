@@ -6,12 +6,12 @@ using System.Text.RegularExpressions;
 
 namespace WindowOpacity {
     public static class Native {
-        private const int GwlExstyle = -20;
+        private const int GwlExStyle = -20;
         private const int WsExLayered = 0x80000;
         private const int LwaAlpha = 2;
 
         /// <summary>
-        ///     Find processes matching given names
+        ///     Find processes matching given names.
         /// </summary>
         /// <param name="processNames"></param>
         /// <returns></returns>
@@ -34,13 +34,13 @@ namespace WindowOpacity {
         }
 
         /// <summary>
-        ///     Make window transparent
+        ///     Make window transparent.
         /// </summary>
         /// <param name="windowHandleList"></param>
         /// <param name="opacity"></param>
         public static void SetWindowsOpacity(Process[] windowHandleList, byte opacity) {
             if (windowHandleList.Length == 0) {
-                Console.WriteLine("No processes were found.");
+                Console.WriteLine("No processes found.");
                 return;
             }
 
@@ -51,8 +51,8 @@ namespace WindowOpacity {
 
             foreach (var process in windowHandleList) {
                 var hwnd = process.MainWindowHandle;
-                var windowLong = GetWindowLong(hwnd, GwlExstyle);
-                _ = SetWindowLong(hwnd, GwlExstyle, windowLong | WsExLayered);
+                var windowLong = GetWindowLong(hwnd, GwlExStyle);
+                _ = SetWindowLong(hwnd, GwlExStyle, windowLong | WsExLayered);
 
                 var ok = SetLayeredWindowAttributes(hwnd, 0, opacity, LwaAlpha);
                 if (ok) {

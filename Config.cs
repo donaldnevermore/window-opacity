@@ -3,7 +3,7 @@
         /// <summary>
         ///     Find the name you need in the console output
         /// </summary>
-        public string[]? ProcessNames { get; init; }
+        public string[] ProcessNames { get; init; }
 
         /// <summary>
         ///     Opacity should be 40 through 255
