@@ -5,6 +5,10 @@ using System.Text.Json;
 
 namespace WindowOpacity {
     public static class Util {
+        /// <summary>
+        /// Get config from input.
+        /// </summary>
+        /// <returns></returns>
         public static Config GetConfig() {
             Console.WriteLine("Please enter process names, separated by commas.");
             var processesText = Console.ReadLine();
@@ -25,7 +29,7 @@ namespace WindowOpacity {
         }
 
         /// <summary>
-        ///     Display current processes.
+        /// Display current processes.
         /// </summary>
         public static void DisplayProcesses() {
             Console.WriteLine("===Process list===");

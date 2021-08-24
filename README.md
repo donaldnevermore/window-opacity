@@ -1,7 +1,7 @@
 ﻿# Window Opacity v0.2
 
-Change your window's opacity and make it transparent. Tested on Windows, but I don't know if it works on MacOS/Linux. If
-you know how to make it work on other platforms, feel welcome to open an issue/PR.
+Change the opacity/transparency of your window. Tested on Windows, but I don't know if it works on MacOS/Linux. If you
+know how to make it work on other platforms, feel welcome to open an issue/PR.
 
 ## Getting Started
 

@@ -11,7 +11,7 @@ namespace WindowOpacity {
         private const int LwaAlpha = 2;
 
         /// <summary>
-        ///     Find processes matching given names.
+        /// Find processes matching given names.
         /// </summary>
         /// <param name="processNames"></param>
         /// <returns></returns>
@@ -34,7 +34,7 @@ namespace WindowOpacity {
         }
 
         /// <summary>
-        ///     Make window transparent.
+        /// Make window transparent.
         /// </summary>
         /// <param name="windowHandleList"></param>
         /// <param name="opacity"></param>
