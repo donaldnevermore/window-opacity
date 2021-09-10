@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.IO;
-using System.Text.Json;
 
 namespace WindowOpacity {
     public static class Util {
@@ -11,21 +9,24 @@ namespace WindowOpacity {
         /// <returns></returns>
         public static Config GetConfig() {
             Console.WriteLine("Please enter process names, separated by commas.");
-            var processesText = Console.ReadLine();
-            while (string.IsNullOrEmpty(processesText)) {
-                Console.WriteLine("Process names cannot be null. Try again.");
-                processesText = Console.ReadLine();
+            var processesInput = Console.ReadLine();
+            while (string.IsNullOrEmpty(processesInput)) {
+                Console.WriteLine("Process names cannot be null.");
+                processesInput = Console.ReadLine();
             }
 
-            Console.WriteLine("Please enter an opacity number.");
-            var opacityText = Console.ReadLine();
-            byte opacity;
-            while (!byte.TryParse(opacityText, out opacity)) {
-                Console.WriteLine("Opacity must be a number. Try again.");
-                opacityText = Console.ReadLine();
+            var defaultOpacityText = "(40-255, default: 240)";
+            Console.WriteLine($"Please enter an opacity number {defaultOpacityText}.");
+            var opacityInput = Console.ReadLine();
+            byte opacity = 240;
+            if (!string.IsNullOrEmpty(opacityInput)) {
+                while (!byte.TryParse(opacityInput, out opacity) || opacity < 40 || opacity > 255) {
+                    Console.WriteLine($"Opacity must be a valid number {defaultOpacityText}.");
+                    opacityInput = Console.ReadLine();
+                }
             }
 
-            return new Config { ProcessNames = processesText.Split(','), Opacity = opacity };
+            return new Config { ProcessNames = processesInput.Split(','), Opacity = opacity };
         }
 
         /// <summary>

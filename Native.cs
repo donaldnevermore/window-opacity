@@ -28,9 +28,9 @@ namespace WindowOpacity {
                 }
 
                 return false;
-            }).ToArray();
+            });
 
-            return processes;
+            return processes.ToArray();
         }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace WindowOpacity {
             }
 
             if (opacity < 40 || opacity > 255) {
-                Console.WriteLine("Opacity should be 40 through 255");
+                Console.WriteLine("Opacity should be 40-255.");
                 return;
             }
 
@@ -56,7 +56,7 @@ namespace WindowOpacity {
 
                 var ok = SetLayeredWindowAttributes(hwnd, 0, opacity, LwaAlpha);
                 if (ok) {
-                    Console.WriteLine($"SetLayeredWindowAttributes {process.ProcessName} ok.");
+                    Console.WriteLine($"SetLayeredWindowAttributes {process.ProcessName} succeeded.");
                 }
                 else {
                     Console.WriteLine($"SetLayeredWindowAttributes {process.ProcessName} failed.");
