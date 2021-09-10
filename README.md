@@ -9,10 +9,6 @@ know how to make it work on other platforms, feel welcome to open an issue/PR.
 2. find the process name whose opacity you want to change.
 3. type those names in the terminal.
 
-## Config
-
-See `config.json` and `Config.cs`.
-
 ## Running from Source
 
 1. make sure you have .NET 5.0 or above installed.
