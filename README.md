@@ -1,4 +1,4 @@
-﻿# Window Opacity v0.2
+﻿# Window Opacity v0.2.1
 
 Change the opacity/transparency of your window. Tested on Windows, but I don't know if it works on MacOS/Linux. If you
 know how to make it work on other platforms, please feel welcome to open an issue/PR.
@@ -11,8 +11,8 @@ know how to make it work on other platforms, please feel welcome to open an issu
 
 ## Running from Source
 
-1. make sure you have .NET 5.0 or above installed.
-2. run `dotnet run`.
+1. Make sure you have .NET 6.0 or above installed.
+2. Run `dotnet run` in the terminal.
 
 ## Special Thanks
 
