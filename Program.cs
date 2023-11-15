@@ -1,4 +1,4 @@
-﻿using static WindowOpacity.Util;
+using static WindowOpacity.Util;
 using static WindowOpacity.Native;
 
 DisplayProcesses();
